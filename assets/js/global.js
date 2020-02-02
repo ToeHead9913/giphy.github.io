@@ -1,1 +1,0 @@
-const GIPHY_KEY = 'PUT_YOUR_GIPGY_KEY_HERE';
