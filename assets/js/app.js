@@ -17,6 +17,7 @@ function populateButtons(searchArray, classToAdd, areaToAddTo) {
 }
 
 $(document).on("click", ".searchButton", function () {
+  event.preventDefault();
   var type = $(this).data("type");
   console.log(type);
   var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + type + "&api_key=PnMkElYmVo95b17U7s1QU4e4QEH9SJyW&limit=10"
@@ -56,7 +57,9 @@ $(document).on("click", ".searchImage", function(){
 })
 
 $("#addSearch").on("click", function(){
-  var newSearch = $("input").eq(0).val();
+  console.log("hit");
+  event.preventDefault();
+  var newSearch = $("#search-input").eq(0).val();
   searchArray.push(newSearch);
   populateButtons(searchArray, "searchButton", "#buttonsArea");
   return false;
